@@ -11,7 +11,7 @@ const bcrypt = require('bcryptjs');
 
 const jwt = require('jsonwebtoken');
 
-const URL = 'mongodb+srv://raja:raja123@servicebookingapp.uvyzllo.mongodb.net/?retryWrites=true&w=majority'
+const URL = "mongodb://rajam:raja@ac-cnheuau-shard-00-00.9tdzsbx.mongodb.net:27017,ac-cnheuau-shard-00-01.9tdzsbx.mongodb.net:27017,ac-cnheuau-shard-00-02.9tdzsbx.mongodb.net:27017/?ssl=true&replicaSet=atlas-cw4eej-shard-0&authSource=admin&retryWrites=true&w=majority"
 
 
 app.use(express.json());
@@ -180,4 +180,6 @@ app.post('/admin-login', async (req, res) => {
     }
 })
 
-app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT || 3001, () => {
+    console.log("server started")
+});
